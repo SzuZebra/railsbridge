@@ -57,6 +57,12 @@ class TopicsController < ApplicationController
     redirect_to topics_path
   end
 
+  def downvote
+    @topic = Topic.find(params[:id])
+    @topic.votes.last.destroy
+    redirect_to topics_path
+  end
+
   # DELETE /topics/1
   # DELETE /topics/1.json
   def destroy
