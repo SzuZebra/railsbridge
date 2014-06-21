@@ -12,6 +12,10 @@ class TopicsController < ApplicationController
   def show
   end
 
+  def about
+    
+  end
+
   # GET /topics/new
   def new
     @topic = Topic.new
