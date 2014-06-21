@@ -9,7 +9,7 @@
   </thead>
 
   <tbody>
-    <% @topics.each do |topic| %>
+    <% @topics.sort_by {|topic| -topic.votes.count}.each do |topic| %>
       <tr>
         <td><%= link_to topic.title, topic %></td>
         <td><%= pluralize(topic.votes.count, "vote") %></td>
